@@ -1,5 +1,5 @@
-import { GET_FOOD_LIST,SELECT_FOOD } from './mutations-types'
-import { getFood } from '../service/api'
+import { GET_FOOD_LIST,SELECT_FOOD,SEARCH_BOOK } from './mutations-types'
+import { getFood,searchBook } from '../service/api'
 
 const getFoodList = ({commit}) => {
 	getFood().then((response) => {
@@ -11,7 +11,14 @@ const selectFood = ({commit}, food) => {
 	commit(SELECT_FOOD, food)
 }
 
+const searchBookByKey = ({commit}, keyWord) => {
+	searchBook(keyWord).then((response) => {
+		commit(SEARCH_BOOK, response.data.data)
+	})
+}
+
 export {
 	getFoodList,
-	selectFood
+	selectFood,
+	searchBookByKey
 }

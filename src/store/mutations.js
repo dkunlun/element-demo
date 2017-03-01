@@ -1,6 +1,7 @@
 import {
 	GET_FOOD_LIST,
-	SELECT_FOOD
+	SELECT_FOOD,
+	SEARCH_BOOK
 } from './mutations-types'
 
 export default {
@@ -9,5 +10,8 @@ export default {
 	},
 	[SELECT_FOOD] (state, selectedFood) {
 		state.selectedFood = selectedFood
+	},
+	[SEARCH_BOOK] (state, list) {
+		state.bookList = list
 	}
 }

@@ -8,7 +8,8 @@ Vue.use(Vuex)
 
 const state = {
 	foodList: [], //食物列表
-	selectedFood: {}
+	selectedFood: {},
+	bookList: []
 }
 
 export default new Vuex.Store({
